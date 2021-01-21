@@ -11,7 +11,7 @@ class CategoryController extends Controller
  */
   public function categories()
    {
-    $categories = \App\models\categories::all();
+    $categories = DB::table('categories')->get();
     
      $id =  $categories->first->category_id;
      $to_do_tasks = DB::table('to_do_task')->where('category_id',$id)->get();
@@ -21,7 +21,7 @@ class CategoryController extends Controller
 
     public function categoriesTasks( $category)
    {
-    $categories = \App\models\categories::all();
+    $categories = DB::table('categories')->get();
      $to_do_tasks = DB::table('to_do_task')->where('category_id',$category)->get();
     
      return view('TaskManager.masterDetials' ,compact('to_do_tasks' , 'categories'));
@@ -46,13 +46,13 @@ class CategoryController extends Controller
     */
    public function addToDoTasks()
    {
-     $categories = \App\models\categories::all();
+     $categories = DB::table('categories')->get();
      return view('TaskManager.addToDoTask' ,compact('categories'));
    }
 
    public function createToDoTasks(Request $request)
    {
-     $categories = \App\models\categories::all();
+     $categories = DB::table('categories')->get();
      $title = $request->input('task-title');
      $description = $request->input('task-description');
      $date = $request->input('task-date');
@@ -63,7 +63,7 @@ class CategoryController extends Controller
    }
 
    public function delete_task($task)
-    {   $categories = \App\models\categories::all();
+    {   $$categories = DB::table('categories')->get();
         DB::table('to_do_task')->where('to_do_task_id',$task)->delete();
         $category=0;
         $to_do_tasks = DB::table('to_do_task')->where('category_id',$category)->get();
@@ -74,7 +74,7 @@ class CategoryController extends Controller
     {   
         DB::table('to_do_task')->where('category_id',$category)->delete();
         DB::table('categories')->where('category_id',$category)->delete();
-        $categories = \App\models\categories::all();
+        $categories = DB::table('categories')->get();
         $to_do_tasks = [];
         return view('TaskManager.masterDetials' ,compact('to_do_tasks' , 'categories'));
     }
