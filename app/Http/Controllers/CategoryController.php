@@ -13,7 +13,7 @@ class CategoryController extends Controller
    {
     $categories = DB::table('categories')->get();
     
-     $id =  $categories->first->category_id;
+     $id =  0;
      $to_do_tasks = DB::table('to_do_task')->where('category_id',$id)->get();
     
      return view('TaskManager.masterDetials' ,compact('to_do_tasks' , 'categories'));
