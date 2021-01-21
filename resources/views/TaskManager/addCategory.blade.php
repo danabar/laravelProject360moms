@@ -21,7 +21,7 @@
   <ul class="nav" style="border: 1px solid black;">
         <li>  <a style="padding: 8px; margin-top: 7px;" href="/TaskManager/welcome">Welcome </a></li>
         <li>  <a style="padding: 8px; margin-top: 7px;" href="/TaskManager/addCategory">create new Category </a></li>
-        <li>  <a  style="padding: 8px; margin-top: 7px;" href="/TaskManager/addToDoTask">create new Todo List </a></li>
+        <li>  <a  style="padding: 8px; margin-top: 7px;" href="/TaskManager/addToDoTask">create new Todo Tasks </a></li>
         <li>  <a style="padding: 8px; margin-top: 7px;"  href="/TaskManager/masterDetials"> Master Detials</a></li>
     </ul>
   </div>

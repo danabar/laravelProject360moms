@@ -63,7 +63,7 @@ class CategoryController extends Controller
    }
 
    public function delete_task($task)
-    {   $$categories = DB::table('categories')->get();
+    {   $categories = DB::table('categories')->get();
         DB::table('to_do_task')->where('to_do_task_id',$task)->delete();
         $category=0;
         $to_do_tasks = DB::table('to_do_task')->where('category_id',$category)->get();
