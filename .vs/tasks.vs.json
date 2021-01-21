@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-database",
+      "appliesTo": "database/",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-2021_01_20_224414_create_categories_table",
+      "appliesTo": "database/migrations/2021_01_20_224414_create_categories_table.php",
+      "type": "launch"
+    }
+  ]
+}
